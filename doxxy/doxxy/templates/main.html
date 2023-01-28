@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS page</title>
+</head>
+    <body>
+       {% if error %}
+         <p>{{ error }}</p>
+       {% endif %}
+       <form action="#" class="contact_form" method="POST">
+         {% csrf_token %}
+           {% if error %}
+              <input name="language" class="form-control" type="text" placeholder="comment" value="{{ language }}" style="display: none">
+           {% endif %}
+         <input name="comment" class="form-control" type="text" placeholder="comment">
+         <input name="slug" class="form-control" type="text" placeholder="slug for news">
+         <input type="submit" value="Post news">
+       </form>
+    </body>
+</html>

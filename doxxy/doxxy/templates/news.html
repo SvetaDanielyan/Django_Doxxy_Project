@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All news</title>
+</head>
+<body>
+  {% if news %}
+    <h1>Last news!</h1>
+    {% for single_news in news %}
+      <a href="/news/{{single_news.slug}}">{{ single_news.title }}</a>
+    {% endfor %}
+  {% else %}
+    <h1>news not found!</h1>
+  {% endif %}
+</body>
+</html>
